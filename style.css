@@ -50,13 +50,13 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("window.png");
+    /* background-image: url("newBg.png"); */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 12px;
     gap: 1px;
-    padding-top: 180px;
+    /* padding-top: 150px; */
 
     transform: scale(1.2);
     opacity: 0;
@@ -71,6 +71,7 @@ body {
 h1 {
     font-size: 50px;
     margin:0;
+    font-weight: normal;
 }
 
 p {
@@ -86,7 +87,7 @@ p {
 }
 
 .letter-window.final .cat {
-    width: 100px;
+    width: 150px;
 }
 
 /* buttons */
@@ -96,6 +97,16 @@ p {
     gap: 30px;
     position: relative;
 }
+
+#letter-buttons button {
+    font-family: "Lovers Quarrel", cursive;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+  }
 
 .no-wrapper{
     position:relative;
@@ -112,6 +123,7 @@ p {
 width: 120px;
 height: auto;
 display: inline-block;
+background-color: palevioletred;
 }
 
 .yes-btn {

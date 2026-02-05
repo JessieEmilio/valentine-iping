@@ -1,8 +1,8 @@
 // Elements
 const envelope = document.getElementById("envelope-container");
 const letter = document.getElementById("letter-container");
-const noBtn = document.querySelector(".no-btn");
-const yesBtn = document.querySelector(".btn[alt='Yes']");
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
 
 const title = document.getElementById("letter-title");
 const catImg = document.getElementById("letter-cat");
@@ -23,8 +23,8 @@ envelope.addEventListener("click", () => {
 // Logic to move the NO btn
 
 noBtn.addEventListener("mouseover", () => {
-    const min = 200;
-    const max = 200;
+    const min = 90;
+    const max = 90;
 
     const distance = Math.random() * (max - min) + min;
     const angle = Math.random() * Math.PI * 2;
@@ -58,20 +58,54 @@ noBtn.addEventListener("mouseover", () => {
 // });
 
 // YES is clicked
+const handleMouseEnter = () => {
+    yesBtn.style.transform = "scale(1.2)";
+};
+
+const handleMouseLeave = () => {
+    yesBtn.style.transform = "scale(1)";
+};
+
+yesBtn.addEventListener("mouseenter", handleMouseEnter);
+yesBtn.addEventListener("mouseleave", handleMouseLeave);
+
+
 
 yesBtn.addEventListener("click", () => {
-    title.textContent = "Thankyou for being My Valentine!";
+    title.textContent = "Ooopp!";
 
     // catImg.src = "cat_dance.gif";
-    catImg.src = "celanjessFunny.jpeg";
-
+    catImg.src = "photoBox.jpeg";
+    catImg.style.width = "300px";
+    catImg.style.height = "auto";
     document.querySelector(".letter-window").classList.add("final");
-
     buttons.style.display = "none";
-
     finalText.style.display = "block";
+
+    // hover
+    // simpan handler ke variable
+    const handleMouseEnter = () => {
+        catImg.style.transform = "scale(1.2)";
+    };
+
+    const handleMouseLeave = () => {
+        catImg.style.transform = "scale(1)";
+    };
+
+    catImg.addEventListener("mouseenter", handleMouseEnter);
+    catImg.addEventListener("mouseleave", handleMouseLeave);
+
     catImg.addEventListener("click", () => {
-        window.open("https://www.canva.com/design/DAHAQch9PUQ/VK5TuocdSJpixiM6c5-qpQ/view?utm_content=DAHAQch9PUQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h997522742a", "_blank");
+        catImg.src = "qrcodeFinal.png";
+        catImg.style.width = "400px";
+        catImg.style.height = "auto";
+        catImg.style.transform = "scale(1)";
+        catImg.style.transition = "none";
+        catImg.removeEventListener("mouseenter", handleMouseEnter);
+        catImg.removeEventListener("mouseleave", handleMouseLeave);
+        finalText.style.display = "none";
+        title.textContent = null;
+        // window.open("https://www.canva.com/design/DAHAQch9PUQ/VK5TuocdSJpixiM6c5-qpQ/view?utm_content=DAHAQch9PUQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h997522742a", "_blank");
       });
 
 });
